@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{user/base::Layout(~{::section})}">
+<head>
+<meta charset="ISO-8859-1">
+<title>This is about page</title>
+</head>
+<body>
+<section>
+<form th:action="@{'/user/quiz-result/'+${cat}}" th:object="${qRapo}" method="post">
+	<div class="card mt-2 mr-5">
+		<div class="card-body">
+				
+		<table th:each="c,i:${qRapo.Question}">
+		
+			<tr>
+				<td class="text-primary"><span>Q.</span>&nbsp;&nbsp;<span th:text="${c.questionNo}"></span></td>
+			</tr>
+				<tr>
+				<td><input type="radio"  th:name="|Question[${i.index}].chose|" th:value="${c.option1}" required>&nbsp;&nbsp;<span th:text="${c.option1}"></span></td>
+			</tr>
+			<tr>
+				<td><input type="radio"  th:name="|Question[${i.index}].chose|" th:value="${c.option2}" required>&nbsp;&nbsp;<span th:text="${c.option2}"></span></td>
+			</tr>
+				<tr>
+				<td><input type="radio" th:name="|Question[${i.index}].chose|" th:value="${c.option3}" required>&nbsp;&nbsp;<span th:text="${c.option3}"></span></td>
+			</tr>
+				<tr>
+				<td><input type="radio" th:name="|Question[${i.index}].chose|" th:value="${c.option4}" required>&nbsp;&nbsp;<span th:text="${c.option4}"></span></td>
+			</tr><br>
+			
+				<input type="hidden" th:name="|Question[${i.index}].id|" th:value="${c.id}"/>
+				<input type="hidden" th:name="|Question[${i.index}].questionNo|" th:value="${c.questionNo}"/>
+				<input type="hidden" th:name="|Question[${i.index}].rightAnswer|" th:value="${c.rightAnswer}"/>
+				<input type="hidden" th:name="|Question[${i.index}].category|" th:value="${c.category}"/>
+		</table> 
+
+		</div>
+		</div>
+				
+				<button class="btn btn-primary" type="submit">Submit</button>
+				
+	
+</form>	
+</section>
+</body>
+</html>

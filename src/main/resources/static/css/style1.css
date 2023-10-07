@@ -1,0 +1,80 @@
+@media screen and (max-width:600px){
+	
+	div.sidebar{
+		display: none;
+	width: 80%;
+	background-color: #009688;
+	height: 100%;
+	position: fixed;
+	padding-top: 45px;
+	
+	}
+	div.content{
+	margin-left:0%;
+}
+	
+}
+
+	
+
+.sidebar{
+	width: 18%;
+	background-color: #009688;
+	
+	
+	height: 100%;
+	position: fixed;
+	padding-top: 45px;
+	z-index: 99999999999999999999999999999;
+	
+}
+
+.sidebar a{
+	display: block;
+	width: 100%;
+	padding: 5px 25px;
+	text-decoration: none;
+	font-size: 20px;
+	color: rgb(253, 253, 253);
+}
+
+.sidebar a:hover{
+	background-color: #e2e2e2;
+}
+
+.sidebar .divider{
+	height: 0.5px;
+	width: 100%;
+	background-color: #e2e2e2;
+	margin-top:10px;
+}
+
+.content{
+	margin-left:20%;
+}
+.sidebar .cross{
+	position: absolute;
+	top:0px;
+	right:35px;
+	font-size: 36px;
+	cursor: pointer;
+}
+.my_profile_picture
+{
+	width:45px;
+	height:45px;
+	object-fit: cover;
+	border-radius: 50%;
+}
+.active
+{
+	background-color: #009688;
+	color:white!important;
+}
+.profile{
+	width:100px;
+	height:100px;
+	object-fit: cover;
+	border-radius: 50%;
+	margin-left: 50px;
+}

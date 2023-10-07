@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{admin/base::Layout(~{::section})}">
+<head>
+<meta charset="ISO-8859-1">
+<title>This is about page</title>
+</head>
+<body>
+<section>
+	<h3 class="text-center">Welcome to Admin Panel<span>{<span th:text="${admin.userName}"></span>}</span></h1>
+	<hr>
+	<div class="container">
+		<div class="row" style="font-size: 25px;">
+		<div class="card text-white bg-primary mb-3 mr-5" style="width:320px;">
+  <div class="card-header text-center">Total User</div>
+  <div class="card-body text-center" style="font-size: 30px;">
+    <i class="fa fa-user"></i>
+    <span class="badge badge-pill badge-info">12</span>
+  </div>
+</div>
+<div class="card text-white bg-secondary mb-3 mr-5" style="width:300px;">
+  <div class="card-header text-center">Total Question</div>
+  <div class="card-body text-center" style="font-size:30px;">
+	<i class="fa fa-quora" aria-hidden="true"></i>
+	    <span class="badge badge-pill badge-info">12</span>
+
+  </div>
+</div>
+<div class="card text-white bg-success mb-3" style="width: 320px;">
+  <div class="card-header text-center">Total Course</div>
+  <div class="card-body text-center" style="font-size: 30px;">
+<i class="fa fa-address-book" aria-hidden="true"></i>
+    <span class="badge badge-pill badge-info">12</span>
+
+   </div>
+</div>
+
+		</div>
+	</div>
+</section>
+</body>
+</html>

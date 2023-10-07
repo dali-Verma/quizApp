@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{admin/base::Layout(~{::section})}">
+<head>
+<meta charset="ISO-8859-1">
+<title>Display all Users</title>
+</head>
+<body>
+<section>
+	<div class="card mr-3">
+		<div class="card-body">
+			<h3 class="text-center">All Users</h3>
+			<div class="table-responsive">
+			<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Role</th>
+
+       <th scope="col">Action</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each="c:${user}">
+      <th scope="row" th:text="${'SCM'+c.id}"></th>
+      <td>
+		  
+		  <span th:text="${c.userName}"></span></td>
+      <td><span th:text="${c.email}"></span></td>
+       <td th:text="${c.role}"></td>
+
+       <td>
+		   <a th:onclick="|deleteUser(${c.id})|"><button class="btn btn-danger btn-sm">Delete</button></a>
+		   <form th:action="@{'/user/update-contact/'+${c.id}}" class="mt-2" method="post">
+		   <button class="btn btn-primary btn-sm" type="submit">Update</button>
+			</form>
+	   </td>
+
+    </tr>
+    
+    
+  </tbody>
+</table>
+</div>
+
+<!--Pagination Content-->
+
+			
+		</div>
+	</div>
+</section>
+</body>
+</html>

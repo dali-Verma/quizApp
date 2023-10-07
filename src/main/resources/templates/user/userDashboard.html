@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{user/base::Layout(~{::section})}">
+<head>
+<meta charset="ISO-8859-1">
+<title>This is about page</title>
+</head>
+<body>
+<section>
+
+	
+	<div class="container">
+		<div class="row" style="font-size: 25px;">
+		<div class="card text-white bg-primary mb-3 mr-5" style="width:320px;">
+  
+  <div class="card-body text-center bg-white" style="font-size: 30px;">
+    
+   <a th:href="@{/user/quiz-page/java}"><span class="badge badge-pill badge-info">JAVA</span></a>
+  </div>
+</div>
+<div class="card text-white bg-primary mb-3 mr-5" style="width:300px;">
+  
+  <div class="card-body text-center bg-white" style="font-size:30px;">
+	
+	   <a th:href="@{/user/quiz-page/html}"><span class="badge badge-pill badge-info">HTML</span></a>
+
+  </div>
+</div>
+<div class="card text-white bg-success mb-3" style="width: 320px;">
+  
+  <div class="card-body text-center bg-white" style="font-size: 30px;">
+    <a th:href="@{/user/quiz-page/css}"><span class="badge badge-pill badge-info">CSS</span></a>
+
+   </div>
+</div>
+
+		</div>
+			<div class="row" style="font-size: 25px;">
+		<div class="card text-white bg-warning mb-3 mr-5" style="width:320px;">
+  
+  <div class="card-body text-center bg-white" style="font-size: 30px;">
+   
+   <a th:href="@{/user/quiz-page/javascript}"> <span class="badge badge-pill badge-info">JAVASCRIPT</span></a>
+  </div>
+</div>
+<div class="card text-white bg-danger mb-3 mr-5" style="width:300px;">
+  
+  <div class="card-body text-center bg-white" style="font-size:30px;">
+	
+	  <a th:href="@{/user/quiz-page/spring}"> <span class="badge badge-pill badge-info">SPRING</span></a>
+
+  </div>
+</div>
+<div class="card text-white bg-info mb-3" style="width: 320px;">
+  
+  <div class="card-body text-center bg-white" style="font-size: 30px;">
+   <a th:href="@{/user/quiz-page/springboot}"><span class="badge badge-pill badge-info">SPRINGBOOT</span></a>
+
+   </div>
+</div>
+
+		</div>
+
+	</div>
+	<div class="container">
+		<div class="card mr-5">
+			<div class="card-header">
+				<h3>Instructions:-</h3>
+			</div>
+			<div class="card-body">
+				<ul>
+					<li>Number of question 10.</li>
+					<li>Has a time limit of 10 minute.</li>
+					<li>There is only 1 possible answer on every question.</li>
+					<li>Must be finished in one sitting you cannot save and finish later.</li>
+					<li>Best for good luck!</li>
+				</ul>
+			</div>
+			
+		</div>
+		
+	</div>
+</section>
+</body>
+</html>

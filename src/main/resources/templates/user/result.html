@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{user/base::Layout(~{::section})}">
+<head>
+<meta charset="ISO-8859-1">
+<title th:text="${title}"></title>
+</head>
+<body>
+<section>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 offset-2">
+				<div class="card mt-5">
+					<div class="card-header">
+						<h3 class="text-center">Result</h3>
+					</div>
+					<div class="card-body text-center">
+						<h4>User Name : <span th:text="${user.userName}"></span></h4>
+						<table class="table  table-bordered">
+							<tbody>
+								<tr>
+									<th>Total Question</th>
+									<th><span th:text="${count}"></span></th>
+								</tr>
+								<tr>
+									<th>Correct Answer</th>
+									<th><span th:text="${ans}"></span></th>
+								</tr>
+								<tr>
+									<th>Wrong Answer</th>
+									<th><span th:text="${wrong}"></span></th>
+								</tr>
+							</tbody>
+						</table>
+						<p class="text-center">
+							<a class="btn btn-primary" th:href="@{/user/index}">Back to Home</a>
+						
+
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div><br>
+	<!--Result Section start here-->
+	<form>
+	<div class="card mt-2 mr-5 ml-5">
+		<div class="card-body">
+			<div class="card-header">
+				<h3 class="text-center">View Results</h3>
+			</div>
+				
+		<table th:each="c:${qRapo.Question}" class="table text-white">
+		
+			<tr>
+				<td class="text-primary"><span>Q.</span>&nbsp;&nbsp;<span th:text="${c.questionNo}"></span></td>
+			</tr>
+				<tr>
+				<td th:style="${c.chose==c.rightAnswer?'background-color:green':'background-color:red'}"><input type="radio">&nbsp;&nbsp;<b>Your Choice :</b> <span th:text="${c.chose}"></span></td>
+			</tr>
+			<tr>
+				<td th:style="${c.rightAnswer==c.rightAnswer?'background-color:green':'background-color:red'}"><input type="radio">&nbsp;&nbsp;<b> Correct Answer :</b><span th:text="${c.rightAnswer}"></span></td>
+			</tr><br>
+				
+			
+				
+		</table> 
+
+		</div>
+		</div>
+				
+				
+				
+	
+</form>	
+</section>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{admin/base::Layout(~{::section})}">
+<head>
+<meta charset="ISO-8859-1">
+<title th:text="${title}"></title>
+</head>
+<body>
+<section>
+	<div class="container">
+		<div class="card">
+			<div class="card-body">
+				<table class="table table-responsive">
+					<thead>
+    <tr>
+      <th scope="col">#ID</th>
+      <th scope="col">Question</th>
+      <th scope="col">Option1</th>
+      <th scope="col">Option2</th>
+       <th scope="col">Option3</th>
+       <th scope="col">Option4</th>
+       <th scope="col">RightAnswer</th>
+       <th scope="col">Category</th>
+		<th>Action</th>
+
+    </tr>
+  </thead>
+    <tbody>
+    <tr th:each="c:${questions}">
+      
+      
+	<td><span th:text="${c.id}"></span></td>
+
+	 <td><span th:text="${c.questionNo}"></span></td>
+
+      <td><span th:text="${c.option1}"></span></td>
+      <td><span th:text="${c.option2}"></span></td>
+      <td><span th:text="${c.option3}"></span></td>
+      <td><span th:text="${c.option4}"></span></td>
+      <td><span th:text="${c.rightAnswer}"></span></td>
+      <td><span th:text="${c.category}"></span></td>
+     <td><a th:onclick="|deleteQuestion(${c.id})|"><button class="btn btn-danger btn-sm">Delete</button></a>
+		<form th:action="@{'/admin/update-question/'+${c.id}}" class="mt-2" method="post">
+		   <button class="btn btn-primary btn-sm" type="submit">Update</button>
+			</form>
+       </td>
+    </tr>
+    
+    
+  </tbody>
+
+				</table>
+			</div>
+		</div>
+	</div>
+</section>
+</body>
+</html>

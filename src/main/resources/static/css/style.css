@@ -1,0 +1,36 @@
+/* signup css */
+.card-style{
+	margin-top:150px;
+	box-shadow: 4px 4px 16px black;
+}
+body{
+	background-image: linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.8)),url("/images/homepage.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	
+	height:100dvh
+}
+@media screen and (max-width:600px){
+	.card-style{
+	margin-top:50px;
+	margin-left:-70px;
+	box-shadow: 4px 4px 16px black;
+	}
+	}
+	
+	/*css for sign in page */
+	#login .container #login-row #login-column #login-box {
+  margin-top: 120px;
+  max-width: 600px;
+  height: 320px;
+  border: 1px solid #9C9C9C;
+  border-radius: 7%;
+  background-color:rgb(255, 255, 255);
+  
+}
+#login .container #login-row #login-column #login-box #login-form {
+  padding: 20px;
+}
+#login .container #login-row #login-column #login-box #login-form #register-link {
+  margin-top: -85px;
+}
